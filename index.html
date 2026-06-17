@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>True Crime Archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=381" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand__dot"></span>
+          <h1>True Crime Archive</h1>
+        </div>
+        <nav class="nav-links">
+          <button class="nav-btn active" data-view="home">Home</button>
+          <button class="nav-btn" data-view="categories">Kategorien</button>
+          <button class="nav-btn" data-view="timeline">Timeline</button>
+          <button class="nav-btn" data-view="favorites">Favoriten</button>
+          <button class="nav-btn" data-view="search">Suche</button>
+        </nav>
+        <div class="topbar__actions">
+          <div class="search-input-wrap">
+            <input id="searchInput" type="search" placeholder="Fall suchen…" />
+          </div>
+          <button id="moreBtn" class="more-btn">Mehr</button>
+        </div>
+      </header>
+
+      <section class="menu-panel" id="menuPanel">
+        <button id="themeToggle">Nachtmodus</button>
+        <button id="editorBtn">Editor</button>
+        <button data-view="about">Impressum</button>
+      </section>
+
+      <main>
+        <section class="view-section active" id="homeView">
+          <div class="hero-panel">
+            <div>
+              <p class="eyebrow">Archiv · 380 Fälle</p>
+              <h2>Die vollständige True-Crime-Archive in chronologischer Übersicht.</h2>
+            </div>
+            <button class="ghost-btn" data-view="timeline">Zur Timeline</button>
+          </div>
+          <div class="section-header">
+            <h3>Neueste Fälle</h3>
+            <button class="text-btn" data-view="categories">Alle ansehen</button>
+          </div>
+          <div class="case-grid" id="latestCases"></div>
+        </section>
+
+        <section class="view-section" id="categoriesView">
+          <div class="section-header">
+            <h3>Kategorien</h3>
+          </div>
+          <div class="category-pills" id="categoryPills"></div>
+          <div class="case-grid" id="categoryCases"></div>
+        </section>
+
+        <section class="view-section" id="timelineView">
+          <div class="section-header">
+            <h3>Timeline</h3>
+          </div>
+          <div class="timeline-wrap" id="timelineContent"></div>
+        </section>
+
+        <section class="view-section" id="favoritesView">
+          <div class="section-header">
+            <h3>Favoriten</h3>
+          </div>
+          <div class="case-grid" id="favoritesCases"></div>
+        </section>
+
+        <section class="view-section" id="searchView">
+          <div class="section-header">
+            <h3>Suchergebnisse</h3>
+            <span id="searchCount"></span>
+          </div>
+          <div class="case-grid" id="searchResults"></div>
+        </section>
+
+        <section class="view-section" id="aboutView">
+          <div class="about-card">
+            <h3>Impressum</h3>
+            <p>True Crime Archive ist ein archiviertes Nachschlagewerk zu bekannten und weniger bekannten Kriminalfällen.</p>
+            <p>Die Inhalte dienen der Dokumentation und Informationsvermittlung.</p>
+            <p>Ich Liebe dich meine Emmi Maus und ich habe das nur für dich gemacht und das war nicht einfach hahaha.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal" id="codeModal">
+      <div class="modal__content modal__content--small">
+        <button class="modal__close" id="closeCodeModal">×</button>
+        <div class="modal__inner">
+          <span class="modal__eyebrow">Geheimer Zugriff</span>
+          <h3>Editor freischalten</h3>
+          <p class="modal__summary">Gib den Code ein, um den Bearbeitungsmodus zu öffnen.</p>
+          <input id="editorCodeInput" class="editor-input" type="password" placeholder="Code eingeben" />
+          <button id="unlockEditorBtn" class="ghost-btn">Freischalten</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="editorModal">
+      <div class="modal__content modal__content--wide">
+        <button class="modal__close" id="closeEditorModal">×</button>
+        <div class="modal__inner">
+          <span class="modal__eyebrow">Editor</span>
+          <h3>Neuen Fall hinzufügen</h3>
+          <form id="editorForm" class="editor-form">
+            <input name="title" placeholder="Titel" required />
+            <input name="category" placeholder="Kategorie" required />
+            <input name="year" type="number" placeholder="Jahr" required />
+            <input name="location" placeholder="Ort" required />
+            <input name="person" placeholder="Person" required />
+            <input name="summary" placeholder="Kurzfassung" required />
+            <textarea name="story" rows="7" placeholder="Detaillierte Geschichte" required></textarea>
+            <button type="submit" class="ghost-btn">Fall speichern</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="caseModal">
+      <div class="modal__content">
+        <button class="modal__close" id="closeModal">×</button>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="data.js?v=381"></script>
+    <script src="expandedData.js?v=381"></script>
+    <script src="app.js?v=381"></script>
+  </body>
+</html>
