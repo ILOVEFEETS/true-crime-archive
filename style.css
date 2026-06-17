@@ -444,3 +444,30 @@ main {
     align-items: flex-start;
   }
 }
+/* Mobiles Menü fixen, Bro */
+@media (max-width: 600px) {
+  .topbar {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .nav-links {
+    gap: 4px; /* Weniger Abstand zwischen den Buttons */
+    overflow-x: auto; /* Erlaubt horizontales Scrollen, falls es zu voll wird */
+    width: 100%;
+    scrollbar-width: none; /* Scrollbar ausblenden */
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-btn {
+    padding: 8px 10px; /* Buttons etwas kompakter machen */
+    font-size: 0.85rem;
+  }
+
+  .brand h1 {
+    font-size: 0.85rem; /* Brand-Name etwas kleiner */
+  }
+}
