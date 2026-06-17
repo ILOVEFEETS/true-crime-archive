@@ -448,24 +448,22 @@ main {
 @media (max-width: 600px) {
   .topbar {
     flex-direction: column;
-    align-items: center;
     padding: 12px;
     gap: 12px;
-    position: relative; /* Nimmt das 'sticky' weg, damit es nicht klebt */
-    border-radius: 12px;
   }
 
   .nav-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 Spalten für die Buttons */
-    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
     width: 100%;
   }
 
   .nav-btn {
-    text-align: center;
-    padding: 8px;
+    padding: 6px 10px;
     font-size: 0.8rem;
+    white-space: nowrap;
   }
 
   .search-input-wrap {
